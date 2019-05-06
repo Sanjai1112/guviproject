@@ -1,0 +1,60 @@
+h4 {
+  margin: 0;
+}
+.items {
+  &-list {
+    margin-top: 12px;
+  }
+  @keyframes glow {
+    -50% {
+      left: -50%;
+    }
+    0% {
+      left: 10%;
+      color: red;
+    }
+    100% {
+      left: 50%;
+      color: green;
+    }
+  }
+  &-input {
+    border: none;
+    margin-left: 4px;
+    outline: none;
+    font-size: 16px;
+    font-weight: bolder;
+    pointer-events: none;
+  }
+  &-input_toggle {
+    border: none;
+    margin-left: 4px;
+    outline: none;
+    font-size: 16px;
+    font-weight: bolder;
+    border-bottom: 1px solid red;
+  }
+  &-update {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    background: #8484ff;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    width: 10%;
+    max-width: 53%;
+    transition: 700ms cubic-bezier(0.075, 0.82, 0.165, 1) width;
+    border: 1px solid #8484ff;
+    border-radius: 16px;
+    padding: 4px;
+    margin-top: 12px;
+    outline: none;
+    &:hover {
+      background: #6464ff;
+      width: 11.5%;
+    }
+  }
+}

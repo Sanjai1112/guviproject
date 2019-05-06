@@ -1,0 +1,44 @@
+.btn {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  width: 90px;
+  box-sizing: border-box;
+  padding: 6px 20px;
+  border-radius: 25px;
+  &-normal {
+    background: #545454;
+    &:hover {
+      background: #646464;
+    }
+  }
+  &-gmail {
+    background: #ff3424;
+    &:hover {
+      background: #ff5444;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .btn {
+    width: 30vw;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 25px;
+  }
+}
+// @media (max-width: 275px) {
+//   .btn {
+//     width: 30vw;
+//     padding: 8px 8px;
+//     font-size: 12px;
+//     border-radius: 25px;
+//   }
+// }
+@media (min-width: 320px) and(max-width: 480px) {
+  .btn {
+    width: 19vw;
+    padding: 6px 10px;
+  }
+}
