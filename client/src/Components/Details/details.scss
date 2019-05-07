@@ -58,3 +58,33 @@ h4 {
     }
   }
 }
+@media (max-width: 640px) {
+  .items {
+    &-update {
+      width: 13%;
+      &:hover {
+        width: 14%;
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  .items {
+    &-update {
+      width: 27%;
+      &:hover {
+        width: 30%;
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  .items {
+    &-update {
+      width: 25%;
+      &:hover {
+        width: 30%;
+      }
+    }
+  }
+}

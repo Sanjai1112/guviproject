@@ -15,7 +15,8 @@ class Details extends Component {
     toggleageEdit: true,
     toggledobEdit: true,
     isError: false,
-    isLogout: false
+    isLogout: false,
+    isUpdating: false
   };
   componentWillMount() {
     //console.log("Details component will mount");
@@ -112,15 +113,22 @@ class Details extends Component {
     dob = dob.toString();
     let data = { id, name, phone, age, dob };
     //console.log(id + " " + name + " " + phone + " " + age + " " + dob);
+    this.setState({ isUpdating: true });
     axios
       .post(" https://guviproject.herokuapp.com/details", { data: data })
       .then(res => {
         //console.log(res.data);
         if (res.data.isError) {
-          this.setState({ isError: res.data.isError });
+          this.setState({ isError: res.data.isError, isUpdating: false });
         } else {
           let { name, phone, age, dob } = res.data;
-          this.setState({ name: name, phone: phone, age: age, dob: dob });
+          this.setState({
+            name: name,
+            phone: phone,
+            age: age,
+            dob: dob,
+            isUpdating: false
+          });
         }
       });
   };
@@ -148,6 +156,19 @@ class Details extends Component {
           >
             <h4 style={{ fontWeight: "lighter" }}>Welcome {this.state.name}</h4>
           </div>
+          {this.state.isUpdating ? (
+            <div
+              className="items-list"
+              style={{
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
+              Updating wait...
+            </div>
+          ) : (
+            ""
+          )}
           <div
             className="items-list"
             style={{
